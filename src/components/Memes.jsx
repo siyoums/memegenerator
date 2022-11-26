@@ -1,5 +1,15 @@
+import { useGlobalContext } from "./Context";
+
 const Memes = () => {
-    return <h1>Memes Component</h1>;
+    const context = useGlobalContext();
+    const handleContext = () => {
+        console.log(context);
+    };
+    return (
+        <section>
+            <button onClick={handleContext}>click</button>
+        </section>
+    );
 };
 
 export default Memes;
