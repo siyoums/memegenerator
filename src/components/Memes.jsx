@@ -1,13 +1,20 @@
 import { useGlobalContext } from "./Context";
 
 const Memes = () => {
-    const context = useGlobalContext();
-    const handleContext = () => {
-        console.log(context);
-    };
+    const { allMemes } = useGlobalContext();
+    const randomMeme = allMemes[Math.floor(Math.random() * allMemes.length)];
+
+    const handleCardClick = (boxCount) => {};
+
     return (
-        <section>
-            <button onClick={handleContext}>click</button>
+        <section className="">
+            <div className="border-2 border-green-500    relative">
+                <img
+                    src={randomMeme && randomMeme.url}
+                    alt="Meme image"
+                    className="border-2 border-blue-700 object-cover "
+                />
+            </div>
         </section>
     );
 };
